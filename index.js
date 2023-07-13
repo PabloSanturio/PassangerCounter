@@ -1,46 +1,26 @@
 
 
-/* 
-let count = 5 + 7
-
-function increment() {
-    
-}
- */
-
-
-function Number42() {
-    console.log(42);
+let count = 0
+let countEl = document.getElementById("count")
+let saveEl = document.getElementById("save-el")
+let totalPeople = 0 
+let totalEl = document.getElementById("total-el")
+function increment () {
+    count = count + 1
+    countEl.textContent = count
 }
 
-Number42()
 
-let lap1 = 34
-let lap2 = 33
-let lap3 = 36
 
-// Create a function that logs out the sum of all the lap times
+function save() {
+ let previousEntries =  count + " - "
 
-function totalLapTimes(lap1, lap2, lap3) {
-    
-    const totalTimes = lap1 + lap2 + lap3
-    console.log(totalTimes); 
+ saveEl.textContent += previousEntries
+ totalPeople += count // Suma el valor actual de 'count' al total de personas
+ totalEl.textContent = "Total of people: " + totalPeople
+
+ count = 0
+
+
 }
 
-totalLapTimes(lap1, lap2, lap3)
-
-
-let lapsCompleted = 0
-
-// Create a function that increments the lapsCompleted variable with one
-// Run it three times
-
-function increments(laps) {
-   total = laps + 1
-   console.log(total);
-   return total
-} 
-
-increments(lapsCompleted)
-increments(lapsCompleted)
-increments(lapsCompleted)
